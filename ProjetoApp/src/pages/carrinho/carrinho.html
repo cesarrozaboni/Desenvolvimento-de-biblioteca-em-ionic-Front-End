@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Carrinho</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="confirmarPedido($event)">
+        <ion-icon name="checkmark-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content padding class="carrinho">
+  <ion-list class="carrinho">
+    <ion-item class="carrinho">
+      <button class="carrinho" ion-item *ngFor="let item of items;let i = index">
+        <ion-thumbnail item-start>
+          <img src="{{item.img}}">
+        </ion-thumbnail>
+        <h2 class="carrinho">{{item.titulo}}</h2>
+        <p class="carrinho">{{item.ano}}</p>
+        <button color="primary" ion-button clear item-end (click)="removeLivro($event)">Remover</button>
+      </button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+

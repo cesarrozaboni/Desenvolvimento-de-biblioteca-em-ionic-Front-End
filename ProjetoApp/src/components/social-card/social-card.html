@@ -1,0 +1,37 @@
+
+<ion-card >
+  <ion-item color="primary">
+    <ion-avatar item-start>
+      <img src="assets/imgs/mario.jpg">
+    </ion-avatar>
+    <h2>{{info.nome}}</h2>
+    <p>{{info.data}}</p>
+  </ion-item>
+
+  <img src="assets/capas/livro2.jpg">
+
+  <ion-card-content>
+    <div class="card-subtitle">Recomendo esse Livro, Leiam...</div>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>>{{info.likes}} Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>>{{info.comentarios}} Comments</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        11h ago
+      </ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>

@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        <ion-label color="light">Animações</ion-label>
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding class="anima">
+<!--
+  <ion-card (tap)="tapEvent ($event)" class="anima">
+    <ion-thumbnail>
+      <img src= './capas/livro1.jpg'> 
+    </ion-thumbnail> 
+    <ion-item>
+        tapped: {{tap}} Vezes
+      </ion-item>  
+   </ion-card>
+  -->
+
+    <div animates #animation="animates" text-center class="anima">
+      <button ion-button color="danger" (click)="animation.start({type: 'shake', duration: '1000'})" >
+        Clique aqui
+      </button>
+      
+    
+    </div>
+    <button ion-button color="danger" (click)="criarEfeito()">Efeito</button>
+    <p [@meuEfeito]="estadoAnimacao">
+      Texto Animacao 01
+    </p>
+    
+    
+</ion-content>

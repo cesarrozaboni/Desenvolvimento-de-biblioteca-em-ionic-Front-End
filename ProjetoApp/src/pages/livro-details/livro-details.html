@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{livro.titulo}}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="editarItem($event)">
+        <ion-icon name="build"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="removerItem($event)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="details">
+
+  <ion-card class="details">
+
+    <img src="{{livro.img}}">
+
+    <ion-item class="details_icons">
+      <ion-icon class="details_icons" name="book" item-start large></ion-icon>
+      <h2 class="details_icons"><strong>{{livro.titulo}}</strong></h2>
+      <p class="details_icons"><strong>Ano: {{livro.ano}}</strong></p>
+    </ion-item>
+
+    <ion-item class="details_icons">
+      <ion-icon name="buffer" item-left large></ion-icon>
+      <h2></h2>
+      <p class="details_icons"><strong>Qtde:</strong></p>
+    </ion-item>
+
+  </ion-card>
+
+</ion-content>

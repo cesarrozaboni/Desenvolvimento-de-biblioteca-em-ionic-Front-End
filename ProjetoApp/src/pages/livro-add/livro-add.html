@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cadastro Livros</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="cadastro">
+
+  <ion-list>
+
+    <ion-item class="cadastro">
+      <ion-label floating color="light"><strong>Título</strong></ion-label>
+      <ion-input type="text" [(ngModel)]="livro.titulo"></ion-input>
+    </ion-item>
+
+    <ion-item class="cadastro">
+      <ion-label floating color="light"><strong>Ano</strong></ion-label>
+      <ion-input type="number" [(ngModel)]="livro.ano"></ion-input>
+    </ion-item>
+
+    <ion-item class="cadastro">
+      <ion-label color="light"><strong>Autores</strong></ion-label>
+      <button ion-button item-right color="primary" (click)="gerenciarAutores()">
+        <ion-icon name="add"></ion-icon>&nbsp;Adicionar Autores </button>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-buttons>
+    <button ion-button color="primary" (click)="salvar($event)">Salvar</button>
+    <button ion-button color="primary" (click)="cancelar()">Cancelar</button>
+  </ion-buttons>
+
+</ion-content>

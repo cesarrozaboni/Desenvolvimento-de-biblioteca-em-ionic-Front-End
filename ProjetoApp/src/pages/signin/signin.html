@@ -1,0 +1,64 @@
+<ion-header>
+        <ion-navbar color=primary>
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title>Login</ion-title>
+        </ion-navbar>
+</ion-header>
+<ion-content class="login-content" padding>
+        <ion-row class="logo-row">
+          <ion-col></ion-col>
+          <ion-col width-50>       
+         <img src="assets/imgs/lock2.png"/>
+          </ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+        <div class="login-box">
+                <form #f="ngForm" (ngSubmit)="onSignin(f)">
+            <ion-row>
+              <ion-col>
+                <ion-list inset>
+                  
+                        <ion-item>
+                                <ion-label fixed>E-mail</ion-label>
+                                <ion-input type="email" ngModel name="email" required></ion-input>
+                              </ion-item>
+                              <ion-item>
+                                <ion-label fixed>Password</ion-label>
+                                <ion-input type="password" ngModel name="password" required></ion-input>
+                              </ion-item>
+                  
+                </ion-list>
+              </ion-col>
+            </ion-row>
+            
+            <ion-row>
+              <ion-col class="signup-col">
+                    <button ion-button block type="submit" [disabled]="!f.valid">Entrar</button>
+                    <button ion-button block type="button" color="light" (click)="novoUsuario()">Criar Conta</button>
+              </ion-col>
+            </ion-row>
+            
+          </form>
+        </div>
+        <ion-fab right top>
+                <button ion-fab color="primary">
+                  <ion-icon name="add"></ion-icon>
+                </button>
+                <ion-fab-list side="left">
+                  <button ion-fab>
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </button>
+                  <button ion-fab>
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </button>
+                  <button ion-fab>
+                    <ion-icon name="logo-vimeo"></ion-icon>
+                  </button>
+                  <button ion-fab>
+                    <ion-icon name="logo-googleplus"></ion-icon>
+                  </button>
+                </ion-fab-list>
+              </ion-fab>
+      </ion-content>

@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar color="primary" *ngIf="!visibilidade">
+        <button ion-button menuToggle>
+          <ion-icon color="light" name="menu"></ion-icon>
+        </button>
+        <ion-title>Livros</ion-title>
+  
+        <ion-buttons end>
+          <button ion-button icon-only color="light" (click)="abrirPesquisa($event)">
+            <ion-icon name="search"></ion-icon>
+          </button>
+          <button ion-button icon-only (click)="novoItem($event)">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+  
+    <ion-navbar color="primary" *ngIf="visibilidade">
+        <ion-searchbar [(ngModel)]="pesquisa"
+                      [showCancelButton]="shouldShowCancel"
+                      (ionInput)="pesquisar($event)"
+                      (ionClear)="cancelarPesquisa()">
+        </ion-searchbar>
+    </ion-navbar>
+  </ion-header>  
+
+<ion-content class="list">
+
+    <ion-list class="list">
+      <ion-item class="list">
+        <button class="list" ion-item *ngFor="let item of itemsFilter">
+          <ion-thumbnail item-start>
+            <img src="{{item.img}}">
+          </ion-thumbnail>
+          <h2 class="list">{{item.titulo}}</h2>
+          <p class="list">{{item.ano}}</p>
+          <button color="primary" ion-button clear item-end (click)="adicionaCarrinho($event)">Adicionar ao carrinho</button>
+          <button color="primary" ion-button clear item-end (click)="itemTapped($event, item)">Ver</button>
+        </button>
+      </ion-item>
+    </ion-list>
+  
+  </ion-content>
+  
